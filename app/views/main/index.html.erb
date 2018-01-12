@@ -1,0 +1,7 @@
+<h1>Welcome to the Transcriptor App</h1>
+
+<%= link_to "Upload a file", upload_path %>
+
+<% @audio_files.each do |file| %>
+  <p><%= file.name %></p>
+<% end %>
