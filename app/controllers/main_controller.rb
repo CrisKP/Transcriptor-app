@@ -1,6 +1,5 @@
 class MainController < ApplicationController
   def index
-    # binding.pry
     @audio_files = AudioFile.all
   end
 
@@ -10,13 +9,12 @@ class MainController < ApplicationController
   end
 
   def new
-      @audio_file = AudioFile.new
+    @audio_file = AudioFile.new
   end
 
-private
+  private
 
   def audio_file_params
     params.require(:audio_file).permit(:audio, :name)
   end
-
 end
