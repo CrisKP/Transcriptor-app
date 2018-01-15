@@ -9,7 +9,7 @@ RSpec.feature 'upload an audio file' do
     it 'renders without error' do
       visit '/'
       expect(page).to have_content('Transcriptor')
-      # expect(page).to have_link("Upload a file")
+      expect(page).to have_link('Upload a file')
     end
   end
 
@@ -25,21 +25,13 @@ RSpec.feature 'upload an audio file' do
     end
   end
 
-  context 'when I click the choose file button' do
-    it 'prompts the file explorer window' do
-    end
-  end
-
-  scenario 'when I click the create audio file button after selecting a file and entering name' do
+  scenario 'when I click the create audio file button after selecting a file' do
   end
 
   it 'creates an audio record and uploads the file to storage' do
     visit '/upload'
-    
     attach_file 'audio_file[audio]', support_file('test-file.wav')
-    fill_in 'audio_file[name]', with: "Test Name"
     click_button "Create Audio file"
-
-    expect(page).to have_content('Test Name')
+    expect(page).to have_content('Transcriptor')
   end
 end

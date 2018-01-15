@@ -16,7 +16,6 @@ ActiveRecord::Schema.define(version: 20180111213616) do
   enable_extension "plpgsql"
 
   create_table "audio_files", force: :cascade do |t|
-    t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "audio_file_name"

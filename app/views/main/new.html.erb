@@ -1,6 +1,5 @@
 <p>Upload an audio file below to get a text output.</p>
 <%= form_for @audio_file, url: upload_path, html: { multipart: true} do |form| %>
   <%= form.file_field :audio %>
-  <%= form.text_field :name, placeholder: "Name your file" %>
   <%= form.submit %>
 <% end %>

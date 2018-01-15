@@ -1,6 +1,6 @@
 class MainController < ApplicationController
   def index
-    @audio_files = AudioFile.all
+    
   end
 
   def create
@@ -15,6 +15,6 @@ class MainController < ApplicationController
   private
 
   def audio_file_params
-    params.require(:audio_file).permit(:audio, :name)
+    params.require(:audio_file).permit(:audio)
   end
 end
