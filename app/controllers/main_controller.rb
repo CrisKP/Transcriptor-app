@@ -1,15 +1,11 @@
 class MainController < ApplicationController
   def index
-    
+    @audio_file = AudioFile.new
   end
 
   def create
     @audio_file = AudioFile.create(audio_file_params)
     redirect_to :root
-  end
-
-  def new
-    @audio_file = AudioFile.new
   end
 
   private

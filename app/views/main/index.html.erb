@@ -1,3 +1,28 @@
-<h1>Welcome to the Transcriptor App</h1>
+<head>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,700,700i" rel="stylesheet">
+</head>
+<body>
 
-<%= link_to "Upload a file", upload_path %>
+  <header>
+    <div class="header-text">
+      <h1>TRANSCRIPTOR</h1>
+      <h2>speech to text</h2>
+    </div>
+
+    <img src="/assets/logo-white.svg" alt="Zeal logo"/>
+  </header>
+
+  <main>
+
+    <h3>Turn your recorded meetings into a transcribed document you can search and reference later</h3>
+
+    <div class="box">
+      <%= form_for @audio_file, url: index_path, html: { multipart: true} do |form| %>
+        <%= form.file_field :audio %>
+        <%= form.submit %>
+      <% end %>
+    </div>
+
+  </main>
+
+</body>
