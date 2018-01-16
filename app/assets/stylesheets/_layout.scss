@@ -1,0 +1,48 @@
+@import 'colors';
+@import 'fonts';
+
+header {
+  background-color: $primary;
+  height: 100vh;
+  width: 135px;
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  padding: 35px;
+  box-sizing: border-box;
+
+  .header-text {
+    transform: translateX(-40%) translateY(100%) rotate(270deg);
+    width: 265px;
+    text-align: right;
+  }
+
+  h1 {
+    color: white;
+    font-family: $primary_font;
+    font-size: 36px;
+    line-height: 36px;
+  }
+
+  h2{
+    color: white;
+    font-family: $primary_font;
+    font-size: 30px;
+    line-height: 24px;
+    font-weight: normal;
+  }
+
+  img {
+    position: absolute;
+    bottom: 35px;
+  }
+}
+
+main {
+  	height: 72px;
+    width: 691px;
+    font-size: 36px;
+    font-weight: 500;
+    line-height: 36px;
+    text-align: center;
+}
