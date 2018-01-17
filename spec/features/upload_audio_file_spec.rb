@@ -12,12 +12,10 @@ RSpec.feature 'upload an audio file' do
     end
   end
 
-  scenario 'when I click the create audio file button after selecting a file' do
     it 'creates an audio record and uploads the file to storage' do
       visit '/'
       attach_file 'audio_file[audio]', support_file('test-file.wav')
       click_button "Start Transcription"
       expect(page).to have_content('Turn your recorded meetings')
     end
-  end
 end
