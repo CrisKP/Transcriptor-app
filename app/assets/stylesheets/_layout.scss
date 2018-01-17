@@ -111,7 +111,7 @@ main {
 
     form {
       background-color: $light;
-    	box-shadow: 0 0 2px 0 rgba(0,0,0,0.15);
+      box-shadow: 0 0 2px 0 rgba(0,0,0,0.15);
       padding: 50px;
       position: relative;
       text-align: center;
@@ -140,10 +140,10 @@ main {
       }
 
       .start-text {
-      	height: 55.9px;
-      	width: 286px;
-      	border-radius: 3px;
-      	background-color: $neutral;
+        height: 55.9px;
+        width: 286px;
+        border-radius: 3px;
+        background-color: $neutral;
         color: $light;
         font-size: 29px;
         font-weight: 500;
