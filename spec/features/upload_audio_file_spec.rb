@@ -12,6 +12,7 @@ RSpec.feature 'upload an audio file' do
     end
   end
 
+  context 'saves a file to the database' do
     it 'creates an audio record and uploads the file to storage' do
       visit '/'
       attach_file 'audio_file[audio]', support_file('test-file.wav')
@@ -19,4 +20,5 @@ RSpec.feature 'upload an audio file' do
         click_button "Start Transcription"
       }.to change(AudioFile, :count).by(1)
     end
+  end
 end
