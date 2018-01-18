@@ -5,16 +5,18 @@ def support_file(filename)
 end
 
 RSpec.feature 'upload an audio file' do
+  before do
+    visit '/'
+  end
+
   context 'when loading the home page' do
     it 'renders without error' do
-      visit '/'
       expect(page).to have_content('Turn your recorded meetings')
     end
   end
 
   context 'when the file is a valid wav' do
     it 'creates an audio record and saves the file to storage' do
-      visit '/'
       attach_file 'audio_file[audio]', support_file('test-file.wav')
       expect {
         click_button "Start Transcription"
@@ -24,7 +26,6 @@ RSpec.feature 'upload an audio file' do
 
   context 'when the file is NOT a valid wav' do
     it 'will not create an audio record and save the file to storage' do
-      visit '/'
       attach_file 'audio_file[audio]', support_file('test-file.mp3')
       expect {
         click_button "Start Transcription"
