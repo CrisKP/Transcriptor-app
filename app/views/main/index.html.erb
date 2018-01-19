@@ -20,12 +20,13 @@
         <%= form_with model: @audio_file, url: index_path, html: { multipart: true} do |form| %>
           <div class="title__wrapper">
               <div class="title">
-                <label for="title" class="title-field">Transcription Title
-                <%=image_tag("title-icon.svg", alt: 'Title image')%>
                 <div>
                   <%= form.text_field :title, :id => "title" %>
+                  <label for="title" class="title-field">Transcription Title
+                    <%=image_tag("title-icon.svg", alt: 'Title image')%></label>
                 </div>
               </div>
+              <br/>
               <p>What is this a recording of?</p>
           </div> <!-- /.title_wrapper -->
 
