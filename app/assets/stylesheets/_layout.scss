@@ -111,7 +111,7 @@ main {
     form {
       background-color: $light;
       box-shadow: 0 0 2px 0 rgba(0,0,0,0.15);
-      padding: 50px;
+      padding: 35px;
       position: relative;
       text-align: center;
       z-index: 5;
@@ -125,6 +125,7 @@ main {
         .title-field {
           font-size: 24px;
           color: $neutral_medium;
+          position: relative;
         }
 
         #title {
@@ -133,9 +134,16 @@ main {
           width: 245px;
           background: transparent;
           border-bottom: 1px solid $neutral_medium_light;
+          position: absolute;
+          bottom: 0;
+          margin-bottom: 250px;
 
           &:focus {
-            border-bottom: 1px solid #FFA415;
+            border-bottom: 1px solid $primary;
+
+            + .title-field {
+              color: $primary;
+            }
           }
         }
 
