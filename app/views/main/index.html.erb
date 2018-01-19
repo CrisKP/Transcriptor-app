@@ -6,7 +6,8 @@
       <h2>speech to text</h2>
     </div>
 
-    <img src="/assets/logo-white.svg" alt="Zeal logo"/>
+    <%=image_tag("logo-white.svg", alt: 'Zeal logo')%>
+
   </header>
 
   <main>
@@ -20,7 +21,7 @@
           <div class="title__wrapper">
               <div class="title">
                 <label for="title" class="title-field">Transcription Title
-                <img src="/assets/title-icon.svg" alt="Title image" /></label>
+                <%=image_tag("title-icon.svg", alt: 'Title image')%>
                 <div>
                   <%= form.text_field :title, :id => "title" %>
                 </div>
@@ -31,7 +32,7 @@
           <div class="upload-btn">
             <%= form.file_field :audio, :id => "upload-btn" %>
               <label for="upload-btn" class="file-upload">
-              <img src="/assets/upload-icon.svg" alt="Upload File" />
+              <%=image_tag("upload-icon.svg", alt: 'Upload File')%>
               Upload Audio File</label>
           </div>
           <p>File type accepted: wav.</p>
