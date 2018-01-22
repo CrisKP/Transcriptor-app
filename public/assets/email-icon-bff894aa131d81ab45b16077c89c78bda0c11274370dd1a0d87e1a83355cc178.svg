@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="28px" height="18px" viewBox="0 0 28 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>email-icon</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="zeal-speech-to-text-forms-completed" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-608.000000, -308.000000)">
+        <g id="transcription-form" transform="translate(446.000000, 249.000000)" fill="#FFA415" fill-rule="nonzero">
+            <g id="field-your-email" transform="translate(50.000000, 50.000000)">
+                <g id="letter-icon" transform="translate(112.000000, 9.000000)">
+                    <path d="M0.636363636,0 C0.284613636,0 0,0.277612759 0,0.620689655 L0,17.3793103 C0,17.7211862 0.284623182,18 0.636363636,18 L27.3636364,18 C27.7153864,18 28,17.7211738 28,17.3793103 L28,0.620689655 C28,0.277603448 27.7153768,0 27.3636364,0 L0.636363636,0 Z M2,1 L25,1 L19.6630295,5.62299372 L19.6642355,5.62299372 C19.6630295,5.62422184 19.660618,5.62544965 19.6594122,5.62667746 L13.5818903,11 L7.5034424,5.62667746 C7.49982484,5.62299372 7.49620728,5.62053809 7.49258972,5.61685435 L2,1 Z M26,2 L26,16 L1,16 L1,2.07295528 L6.57375,6.44048552 L13.1278125,11.8388798 C13.3634094,12.0335014 13.7125312,12.0335014 13.9469062,11.8388798 L20.5044062,6.43574046 L20.5080684,6.432265 L26,2 Z" id="email-icon"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
