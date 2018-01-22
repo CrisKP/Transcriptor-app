@@ -2,7 +2,7 @@
 @import 'colors';
 @font-face {
   font-family: "Brandon Grotesque";
-  src: url(/assets/BrandonGrotesque-Regular.otf) format("truetype");
+  src: font-url(/assets/BrandonGrotesque-Regular.otf) format("truetype");
 }
 
 $sidebar_width: 135px;
