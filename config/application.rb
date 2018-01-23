@@ -29,6 +29,5 @@ module TranscriptorApp
     config.generators.system_tests = nil
 
     config.assets.paths << Rails.root.join("app", "assets", "fonts")
-    # config.assets.precompile << /\.(?:svg|otf)$/
   end
 end
