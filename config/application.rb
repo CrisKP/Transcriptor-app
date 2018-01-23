@@ -28,6 +28,7 @@ module TranscriptorApp
     # Don't generate system test files.
     config.generators.system_tests = nil
 
-    config.assets.precompile << /\.(?:svg|otf)$/
+    config.assets.paths << Rails.root.join("app", "assets", "fonts")
+    # config.assets.precompile << /\.(?:svg|otf)$/
   end
 end
