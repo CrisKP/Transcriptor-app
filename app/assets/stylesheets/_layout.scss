@@ -1,0 +1,152 @@
+@import 'breakpoints';
+@import 'colors';
+@font-face {
+  font-family: "Brandon Grotesque";
+  src: url(/assets/BrandonGrotesque-Regular.otf) format("truetype");
+}
+
+$sidebar_width: 135px;
+
+* {
+  font-family: "Brandon Grotesque";
+}
+
+body {
+  background: $neutral_extra_light;
+  margin: auto;
+}
+
+header {
+  background-color: $primary;
+  width: 100vw;
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  padding: 15px;
+  box-sizing: border-box;
+
+  @media (min-width: $small) {
+    height: 100vh;
+    padding: 35px;
+    width: $sidebar_width;
+  }
+
+  .header-text {
+    transform: none;
+    width: 265px;
+    text-align: right;
+
+    @include bp(small) {
+      transform: translateX(-40%) translateY(100%) rotate(270deg);
+    }
+  }
+
+  h1 {
+    color: white;
+    font-size: 36px;
+    line-height: 36px;
+    text-shadow: -1px 2px 0 0 #C4C4C4;
+  }
+
+  h2 {
+    color: $light;
+    font-size: 30px;
+    line-height: 24px;
+    font-weight: normal;
+  }
+
+  h1 + h2 {
+    margin-top: -25px;
+  }
+
+  img {
+    position: absolute;
+    bottom: 35px;
+  }
+}
+
+
+main {
+  box-sizing: border-box;
+  height: 100vh;
+  font-size: 36px;
+  font-weight: 500;
+  line-height: 36px;
+  text-align: center;
+  width: 100vw;
+  padding-left: $sidebar_width;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+
+  .main__wrapper {
+    width: 680px;
+  }
+
+  h3 {
+    color: $neutral_dark;
+    text-align: center;
+    margin-bottom: 90px;
+    font-size: 36px;
+  }
+
+
+  .box {
+    position: relative;
+
+    &:before {
+      height: 154px;
+      width: 519px;
+      border-radius: 17px;
+      box-shadow: 0 6px 35px 0 rgba(0,0,0,0.18);
+      display: block;
+      content: '';
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: 0;
+      z-index: 1;
+    }
+
+    form {
+      background-color: $light;
+      box-shadow: 0 0 2px 0 rgba(0,0,0,0.15);
+      padding: 50px;
+      position: relative;
+      text-align: center;
+      z-index: 5;
+    }
+
+      p {
+        font-size: 14px;
+        color: $neutral_light;
+      }
+
+      input[type=file] {
+        display: none;
+      }
+
+      /* styled upload button */
+      .file-upload {
+        height: 53.52px;
+        width: 282px;
+        border: 0.68px solid #5F5F5F;
+        border-radius: 50px;
+        text-align: center;
+        padding: 10px;
+        color: $neutral_dark;
+        font-size: 25px;
+      }
+
+      .start-text {
+        height: 55.9px;
+        width: 286px;
+        border-radius: 3px;
+        background-color: $neutral;
+        color: $light;
+        font-size: 29px;
+        font-weight: 500;
+      }
+  }
+}
