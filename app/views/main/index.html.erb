@@ -6,7 +6,8 @@
       <h2>speech to text</h2>
     </div>
 
-    <img src="/assets/logo-white.svg" alt="Zeal logo"/>
+    <%=image_tag("logo-white.svg", alt: 'Zeal logo')%>
+
   </header>
 
   <main>
@@ -17,15 +18,26 @@
 
       <div class="box">
         <%= form_with model: @audio_file, url: index_path, html: { multipart: true} do |form| %>
+          <div class="title__wrapper">
+              <div class="title">
+                <div>
+                  <%= form.text_field :title, :id => "title" %>
+                  <label for="title" class="title-field">Transcription Title
+                    <%=image_tag("title-icon.svg", alt: 'Title image')%></label>
+                </div>
+              </div>
+              <p>What is this a recording of?</p>
+          </div> <!-- /.title_wrapper -->
+
           <div class="upload-btn">
             <%= form.file_field :audio, :id => "upload-btn" %>
               <label for="upload-btn" class="file-upload">
-              <img src="/assets/upload-icon.svg" alt="Upload File" />
+              <%=image_tag("upload-icon.svg", alt: 'Upload File')%>
               Upload Audio File</label>
-            </div>
-            <p>File types accepted mp3, mpeg, and wav.</p>
+          </div>
+          <p>File type accepted: wav.</p>
           <div class="start-btn">
-            <%= form.submit ("Start Transcription"), :class => 'start-text' %>
+            <%= form.submit ("Start Transcription"), :class => "start-text" %>
           </div>
         <% end %>
       </div>

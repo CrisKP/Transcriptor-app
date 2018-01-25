@@ -11,6 +11,6 @@ class MainController < ApplicationController
   private
 
   def audio_file_params
-    params.require(:audio_file).permit(:audio)
+    params.require(:audio_file).permit(:audio, :title)
   end
 end
