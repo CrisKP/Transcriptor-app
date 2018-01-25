@@ -5,9 +5,8 @@ class MainController < ApplicationController
 
   def create
     @audio_file = AudioFile.create(audio_file_params)
-    @title = AudioFile.last.title
     if @audio_file.save
-      flash[:success] = "'#@title' transcription sent to alfonso@codingzeal.com!"
+      flash[:success] = "\"#{@audio_file.title}\" transcription sent to alfonso@codingzeal.com!"
       redirect_to :root
     else
       redirect_to :root
