@@ -2,7 +2,7 @@
 @import 'colors';
 @font-face {
   font-family: "Brandon Grotesque";
-  src: url(/assets/BrandonGrotesque-Regular.otf) format("truetype");
+  src: font-url("BrandonGrotesque-Regular.otf") format("truetype");
 }
 
 $sidebar_width: 135px;
@@ -45,7 +45,8 @@ header {
     color: white;
     font-size: 36px;
     line-height: 36px;
-    text-shadow: -1px 2px 0 0 #C4C4C4;
+    text-shadow: -1px 2px #C4C4C4;
+    font-weight: bold;
   }
 
   h2 {
@@ -65,7 +66,6 @@ header {
   }
 }
 
-
 main {
   box-sizing: border-box;
   height: 100vh;
@@ -78,7 +78,6 @@ main {
   display: flex;
   align-items: center;
   justify-content: center;
-
 
   .main__wrapper {
     width: 680px;
@@ -112,15 +111,56 @@ main {
     form {
       background-color: $light;
       box-shadow: 0 0 2px 0 rgba(0,0,0,0.15);
-      padding: 50px;
+      padding: 35px;
       position: relative;
       text-align: center;
       z-index: 5;
-    }
+
+      .title__wrapper {
+        height: 150px;
+        width: 246px;
+        margin-left: 345px;
+        text-align: left;
+
+        .title-field {
+          font-size: 24px;
+          color: $neutral_medium;
+          position: relative;
+        }
+
+        .title {
+          margin-bottom: 45px;
+        }
+
+        #title {
+          border: 0;
+          outline: 0;
+          width: 245px;
+          background: transparent;
+          border-bottom: 1px solid $neutral_medium_light;
+          position: absolute;
+          bottom: 0;
+          margin-bottom: 250px;
+
+          &:focus {
+            border-bottom: 1px solid $primary;
+
+            + .title-field {
+              color: $primary;
+            }
+          }
+        }
+
+        input[type=text] {
+          font-size: 24px;
+          color: $neutral_light;
+        }
+      }
 
       p {
         font-size: 14px;
-        color: $neutral_light;
+        color: $neutral_medium_dark;
+        line-height: 20px;
       }
 
       input[type=file] {
@@ -131,7 +171,7 @@ main {
       .file-upload {
         height: 53.52px;
         width: 282px;
-        border: 0.68px solid #5F5F5F;
+        border: 0.68px solid $neutral_medium;
         border-radius: 50px;
         text-align: center;
         padding: 10px;
@@ -148,5 +188,6 @@ main {
         font-size: 29px;
         font-weight: 500;
       }
+    }
   }
 }
