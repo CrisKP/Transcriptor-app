@@ -1,12 +1,11 @@
 require 'google/cloud/speech'
 
-module Transcriptors
+module Service
   class Google
     Speech      = ::Google::Cloud::Speech
     PROJECT_ID  = ENV['GOOGLE_CLOUD_PROJECT_ID']
     CREDENTIALS = {
       'type'           => 'service_account',
-      'project_id'     => PROJECT_ID,
       'private_key_id' => ENV['GOOGLE_CLOUD_PRIVATE_KEY_ID'],
       'private_key'    => ENV['GOOGLE_CLOUD_PRIVATE_KEY'],
       'client_id'      => ENV['GOOGLE_CLOUD_CLIENT_ID'],
@@ -16,7 +15,6 @@ module Transcriptors
       'auth_provider_x509_cert_url' => 'https://www.googleapis.com/oauth2/v1/certs',
       'client_x509_cert_url' => 'https://www.googleapis.com/robot/v1/metadata/x509/1073999425707-compute%40developer.gserviceaccount.com'
     }
-
     AUDIO_OPTS = {
       encoding: :linear16,
       language: "en-US",
