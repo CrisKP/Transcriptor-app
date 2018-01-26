@@ -32,7 +32,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'paperclip'
 gem 'aws-sdk', '~> 2.3'
 gem 'sidekiq'
-gem 'redis'
+gem 'google-cloud-speech'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
