@@ -7,8 +7,8 @@ class MainController < ApplicationController
     @audio_file = AudioFile.create(audio_file_params)
     if @audio_file.save
       flash[:success] = "\"#{@audio_file.title}\" transcription sent to alfonso@codingzeal.com!"
+      redirect_to :root
     end
-    redirect_to :root
   end
 
   private
