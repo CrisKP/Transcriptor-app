@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(version: 20180126060032) do
     t.string "title"
     t.binary "transcription"
     t.datetime "transcribed_at"
+    t.decimal "confidence", precision: 15, scale: 13
   end
 
 end
