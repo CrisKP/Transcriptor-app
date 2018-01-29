@@ -21,8 +21,7 @@ module Service
     }
     AUDIO_OPTS = {
       encoding: :linear16,
-      language: "en-US",
-      sample_rate: 32000
+      language: "en-US"
     }
 
     def initialize(file_path, options={})
