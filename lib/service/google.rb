@@ -1,6 +1,10 @@
+require 'ostruct'
 require 'google/cloud/speech'
 
 module Service
+  class Transcript < OpenStruct
+  end
+
   class Google
     Speech      = ::Google::Cloud::Speech
     PROJECT_ID  = ENV['GOOGLE_CLOUD_PROJECT_ID']
@@ -28,7 +32,9 @@ module Service
 
     def transcripts
       results.map do |res|
-        [file_path.to_path, res.transcript, res.confidence]
+        Transcript.new path: file_path.to_path,
+          text: res.transcript,
+          confidence: res.confidence
       end
     end
 
