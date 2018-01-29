@@ -14,7 +14,7 @@ RSpec.feature 'see an indication that the submission has been made' do
 
   context 'when a valid submission has been made' do
     it 'displays the success message' do
-      expect(page).to have_content '"test title" transcription sent'
+      expect(page).to have_content 'File "test title" has been received and queued for transcription.'
     end
   end
 end
