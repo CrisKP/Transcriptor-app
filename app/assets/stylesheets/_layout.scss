@@ -191,3 +191,20 @@ main {
     }
   }
 }
+.flash-box {
+  position: relative;
+  margin-left: 440px;
+  // background-color: $primary;
+  height: 100px;
+  width: 680px;
+  box-sizing: border-box;
+}
+
+#flash-text {
+  color: $neutral_dark;
+  text-align: center;
+  height: 34px;
+  width: 555px;
+  font-size: 24px;
+  line-height: 34px;
+}
