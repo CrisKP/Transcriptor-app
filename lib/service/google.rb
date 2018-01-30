@@ -31,7 +31,7 @@ module Service
 
     def transcripts
       results.map do |res|
-        Transcript.new path: file_path.to_path,
+        Transcript.new path: file_path,
           text: res.transcript,
           confidence: res.confidence
       end
