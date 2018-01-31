@@ -20,12 +20,34 @@
     },
     "AWS_REGION": {
       "required": true
-    }
+    },
+    "GOOGLE_CLOUD_PROJECT_ID": {
+      "required": true
+    },
+    "GOOGLE_CLOUD_PRIVATE_KEY_ID": {
+      "required": true
+    },
+    "GOOGLE_CLOUD_PRIVATE_KEY": {
+      "required": true
+    },
+    "GOOGLE_CLOUD_CLIENT_EMAIL": {
+      "required": true
+    },
+    "GOOGLE_CLOUD_CLIENT_ID": {
+      "required": true
+    },
+    "SIDEKIQ_USERNAME": {
+      "required": true
+    },
+    "SIDEKIQ_PASSWORD": {
+      "required": true
+    },
   },
   "formation": {
   },
   "addons": [
-
+    "heroku-postgresql:in-dyno",
+    "heroku-redis:hobby-dev"
   ],
   "buildpacks": [
     {
