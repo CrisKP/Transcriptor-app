@@ -21,6 +21,6 @@ RSpec.describe AudioTranscriptionJob, type: :job do
   end
 
   it 'records the confidence score to the audio file' do
-    expect(audio_file.transcription).to_not be_blank
+    expect(audio_file.confidence).to_not be_blank
   end
 end
