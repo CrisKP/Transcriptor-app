@@ -46,7 +46,7 @@
   "formation": {
   },
   "addons": [
-    "heroku-postgresql:in-dyno",
+    "heroku-postgresql:hobby-dev",
     "heroku-redis:hobby-dev"
   ],
   "buildpacks": [
