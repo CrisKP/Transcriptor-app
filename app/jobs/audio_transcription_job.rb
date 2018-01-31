@@ -16,7 +16,10 @@ class AudioTranscriptionJob < ApplicationJob
     attr_reader :s3_file
 
     def write_s3_file_to_tmp!
+      puts ">> Make tmp directory"
       FileUtils.mkdir_p tmp_file_path_dir
+
+      puts ">> Copy file to #{tmp_file_path}"
       s3_file.copy_to_local_file :original, tmp_file_path
     end
 
@@ -39,6 +42,8 @@ class AudioTranscriptionJob < ApplicationJob
   def perform(file_id)
     attempt do
       audio_file = AudioFile.find(file_id)
+
+      puts ">> Starting transcription for #{audio_file.id}"
       audio_file.touch(:transcription_started_at)
 
       s3_temp_file  = S3TempFile.new audio_file.audio
@@ -54,6 +59,7 @@ class AudioTranscriptionJob < ApplicationJob
     attempts = 0
     begin
       attempts += 1
+      puts ">> Starting attempt #{attempts}"
       sleep 1
       yield
     rescue ActiveRecord::RecordNotFound
@@ -63,6 +69,7 @@ class AudioTranscriptionJob < ApplicationJob
 
   def record_transcription(audio_file, service)
     service.transcripts.each do |t|
+      puts ">> Recording transcription for #{audio_file.id}"
       audio_file.transcription              = t.text
       audio_file.confidence                 = t.confidence
       audio_file.transcription_completed_at = DateTime.now
