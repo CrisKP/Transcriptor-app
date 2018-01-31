@@ -86,10 +86,9 @@ main {
   h3 {
     color: $neutral_dark;
     text-align: center;
-    margin-bottom: 90px;
+    margin-top: 90px;
     font-size: 36px;
   }
-
 
   .box {
     position: relative;
@@ -116,44 +115,89 @@ main {
       text-align: center;
       z-index: 5;
 
-      .title__wrapper {
+      .input_wrapper {
+        display: flex;
         height: 150px;
-        width: 246px;
-        margin-left: 345px;
-        text-align: left;
 
-        .title-field {
-          font-size: 24px;
-          color: $neutral_medium;
-          position: relative;
-        }
+        .email__wrapper {
+          height: 150px;
+          width: 246px;
+          text-align: left;
 
-        .title {
-          margin-bottom: 45px;
-        }
+          .email-field {
+            font-size: 24px;
+            color: $neutral_medium;
+            position: relative;
+          }
 
-        #title {
-          border: 0;
-          outline: 0;
-          width: 245px;
-          background: transparent;
-          border-bottom: 1px solid $neutral_medium_light;
-          position: absolute;
-          bottom: 0;
-          margin-bottom: 250px;
+          .email {
+            margin-bottom: 45px;
+          }
 
-          &:focus {
-            border-bottom: 1px solid $primary;
+          #email {
+            border: 0;
+            outline: 0;
+            width: 245px;
+            background: transparent;
+            border-bottom: 1px solid $neutral_medium_light;
+            position: absolute;
+            bottom: 0;
+            margin-bottom: 250px;
 
-            + .title-field {
-              color: $primary;
+            &:focus {
+              border-bottom: 1px solid $primary;
+
+              + .email-field {
+                color: $primary;
+              }
             }
+          }
+
+          input[type=email] {
+            font-size: 24px;
+            color: $neutral_light;
           }
         }
 
-        input[type=text] {
-          font-size: 24px;
-          color: $neutral_light;
+        .title__wrapper {
+          height: 150px;
+          margin-left: 120px;
+          text-align: left;
+          flex-direction: row;
+
+          .title-field {
+            font-size: 24px;
+            color: $neutral_medium;
+            position: relative;
+          }
+
+          .title {
+            margin-bottom: 45px;
+          }
+
+          #title {
+            border: 0;
+            outline: 0;
+            width: 245px;
+            background: transparent;
+            border-bottom: 1px solid $neutral_medium_light;
+            position: absolute;
+            bottom: 0;
+            margin-bottom: 250px;
+
+            &:focus {
+              border-bottom: 1px solid $primary;
+
+              + .title-field {
+                color: $primary;
+              }
+            }
+          }
+
+          input[type=text] {
+            font-size: 24px;
+            color: $neutral_light;
+          }
         }
       }
 
