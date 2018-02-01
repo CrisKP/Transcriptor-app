@@ -60,7 +60,4 @@ Rails.application.configure do
       s3_region: ENV.fetch('AWS_REGION'),
     }
   }
-
-  config.api_key = Rails.application.secrets.sendgrid['api_key']
-  sg = SendGrid::API.new(api_key: config.api_key)
 end
