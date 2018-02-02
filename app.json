@@ -41,13 +41,14 @@
     },
     "SIDEKIQ_PASSWORD": {
       "required": true
-    },
+    }
   },
   "formation": {
   },
   "addons": [
     "heroku-postgresql:hobby-dev",
-    "heroku-redis:hobby-dev"
+    "heroku-redis:hobby-dev",
+    "sendgrid"
   ],
   "buildpacks": [
     {
