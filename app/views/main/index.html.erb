@@ -18,6 +18,17 @@
 
       <div class="box">
         <%= form_with model: @audio_file, url: index_path, html: { multipart: true} do |form| %>
+        <div class="input_wrapper">
+          <div class="email__wrapper">
+              <div class="email">
+                <div>
+                  <%= form.email_field :email, :id => "email" %>
+                  <label for="email" class="email-field">Your Email
+                    <%=image_tag("email-icon.svg", alt: 'Email image')%></label>
+                </div>
+              </div>
+              <p>Where should we send this transcription?</p>
+          </div> <!-- /.email_wrapper -->
           <div class="title__wrapper">
               <div class="title">
                 <div>
@@ -28,21 +39,26 @@
               </div>
               <p>What is this a recording of?</p>
           </div> <!-- /.title_wrapper -->
+        </div>   <!-- /.input_wrapper  -->
 
-          <div class="upload-btn">
-            <%= form.file_field :audio, :id => "upload-btn" %>
-              <label for="upload-btn" class="file-upload">
-              <%=image_tag("upload-icon.svg", alt: 'Upload File')%>
-              Upload Audio File</label>
-          </div>
-          <p>File type accepted: wav.</p>
-          <div class="start-btn">
-            <%= form.submit ("Start Transcription"), :class => "start-text" %>
-          </div>
+        <div class="upload-btn">
+          <%= form.file_field :audio, :id => "upload-btn" %>
+            <label for="upload-btn" class="file-upload">
+            <%=image_tag("upload-icon.svg", alt: 'Upload File')%>
+            Upload Audio File</label>
+        </div>
+        <p>File type accepted: wav.</p>
+        <div class="start-btn">
+          <%= form.submit ("Start Transcription"), :class => "start-text" %>
+        </div>
         <% end %>
       </div>
 
+      <div class='flash-box'>
+        <p id="flash-text">
+          <%= flash[:success] %>
+        </p>
+      </div>
     </div> <!-- /.main__wrapper -->
   </main>
-
 </body>
