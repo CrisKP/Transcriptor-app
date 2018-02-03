@@ -33,6 +33,8 @@ gem 'paperclip'
 gem 'aws-sdk', '~> 2.3'
 gem 'sidekiq'
 gem 'google-cloud-speech'
+gem 'sendgrid-ruby'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

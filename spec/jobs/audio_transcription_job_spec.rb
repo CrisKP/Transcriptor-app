@@ -4,7 +4,10 @@ RSpec.describe AudioTranscriptionJob, type: :job do
   include_context 'an api call'
 
   let(:local_file_path) { File.new("spec/support/test-file.wav") }
-  let(:audio_file) { AudioFile.create audio: local_file_path }
+  let(:audio_file) {
+    AudioFile.create audio: local_file_path,
+      email: 'test@example.com'
+    }
 
   before do
     AudioTranscriptionJob.perform_now audio_file.id
@@ -22,5 +25,13 @@ RSpec.describe AudioTranscriptionJob, type: :job do
 
   it 'records the confidence score to the audio file' do
     expect(audio_file.confidence).to_not be_blank
+  end
+
+  it 'sends an email to the requested recipient' do
+    expect(ActionMailer::Base.deliveries.length).to eq 1
+  end
+
+  after do
+    ActionMailer::Base.deliveries.clear
   end
 end

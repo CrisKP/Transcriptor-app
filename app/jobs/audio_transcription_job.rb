@@ -50,6 +50,11 @@ class AudioTranscriptionJob < ApplicationJob
       google        = Service::Google.new(s3_temp_file.to_path)
 
       record_transcription audio_file, google
+
+      puts ">> Emailing transcription for #{audio_file.id}"
+      TranscriptionNotifierMailer
+        .transcription_email(audio_file)
+        .deliver_now
     end
   end
 
